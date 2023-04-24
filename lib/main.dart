@@ -1,4 +1,4 @@
-import 'package:compare_image_test/screens/Image_comparison.dart';
+import 'package:compare_image_test/screens/image_comparison.dart';
 import 'package:flutter/material.dart';
 
 void main() {
