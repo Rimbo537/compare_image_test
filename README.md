@@ -15,3 +15,11 @@ The application can be useful for various users, such as designers, photographer
 **Main screen**
 
 <img src="Markdown/screen.png" height="500">
+
+**Image comparison screen**
+
+<img src="Markdown/screen2.png" height="500">
+
+**Decode image screen**
+
+<img src="Markdown/screen3.png" height="500">
