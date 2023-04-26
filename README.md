@@ -12,11 +12,10 @@ The application can be useful for various users, such as designers, photographer
 
 # Screenshots
 
-**Main screen**
 <p float="left">
-<img src="Markdown/screen.png" height="300" with = "300">
+<img src="Markdown/screen.png" height="400" with = "400">
 
-<img src="Markdown/screen2.png" height="300" with = "300">
+<img src="Markdown/screen2.png" height="400" with = "400">
 
-<img src="Markdown/screen3.png" height="300" with = "300">
+<img src="Markdown/screen3.png" height="400" with = "400">
 </p>
