@@ -16,10 +16,7 @@ The application can be useful for various users, such as designers, photographer
 <p float="left">
 <img src="Markdown/screen.png" height="300" with = "300">
 
-**Image comparison**
 <img src="Markdown/screen2.png" height="300" with = "300">
-
-**Decode image**
 
 <img src="Markdown/screen3.png" height="300" with = "300">
 </p>
