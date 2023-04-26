@@ -14,13 +14,12 @@ The application can be useful for various users, such as designers, photographer
 
 **Main screen**
 <p float="left">
-<img src="Markdown/screen.png" height="500">
+<img src="Markdown/screen.png" height="300" with = "300">
 
-**Image comparison screen**
+**Image comparison**
+<img src="Markdown/screen2.png" height="300" with = "300">
 
-<img src="Markdown/screen2.png" height="500">
+**Decode image**
 
-**Decode image screen**
-
-<img src="Markdown/screen3.png" height="500">
+<img src="Markdown/screen3.png" height="300" with = "300">
 </p>
