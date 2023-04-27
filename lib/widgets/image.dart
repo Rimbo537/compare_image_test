@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class ImageWidget extends StatelessWidget {
-  File image;
+  File? image;
   double? widthFactor;
 
   ImageWidget({
@@ -18,7 +18,7 @@ class ImageWidget extends StatelessWidget {
         alignment: Alignment.centerLeft,
         widthFactor: widthFactor,
         child: Image.file(
-          image,
+          image as File,
           fit: BoxFit.cover,
           width: double.infinity,
           height: 300,

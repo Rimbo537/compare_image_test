@@ -6,8 +6,8 @@ import 'package:compare_image_test/widgets/image.dart';
 import 'package:flutter/material.dart';
 
 class ImageComparisonScreen extends StatefulWidget {
-  final File firstImageFile;
-  final File secondImageFile;
+  final File? firstImageFile;
+  final File? secondImageFile;
 
   const ImageComparisonScreen({
     super.key,

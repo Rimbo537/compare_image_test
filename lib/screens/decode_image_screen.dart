@@ -7,10 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:image/image.dart';
 
 class DecodeImageScreen extends StatefulWidget {
-  File firstImageFile;
-  File secondImageFile;
+  final File? firstImageFile;
+  final File? secondImageFile;
 
-  DecodeImageScreen({
+  const DecodeImageScreen({
     super.key,
     required this.firstImageFile,
     required this.secondImageFile,
@@ -59,9 +59,9 @@ class _DecodeImageScreenState extends State<DecodeImageScreen> {
     );
   }
 
-  decodeImageFiles(File firstImageFile, File secondImageFile) {
-    final image1 = decodeImage(firstImageFile.readAsBytesSync());
-    final image2 = decodeImage(secondImageFile.readAsBytesSync());
+  decodeImageFiles(File? firstImageFile, File? secondImageFile) {
+    final image1 = decodeImage(firstImageFile!.readAsBytesSync());
+    final image2 = decodeImage(secondImageFile!.readAsBytesSync());
 
     if (image1?.width != image2?.width || image1?.height != image2?.height) {
       setState(() {

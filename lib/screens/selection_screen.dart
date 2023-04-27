@@ -6,6 +6,7 @@ import 'package:compare_image_test/screens/decode_image_screen.dart';
 import 'package:compare_image_test/screens/image_comparison_screen.dart';
 import 'package:compare_image_test/widgets/button.dart';
 import 'package:compare_image_test/widgets/image_picker.dart';
+import 'package:compare_image_test/widgets/metthod_button.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -46,7 +47,6 @@ class _SelectionScreenState extends State<SelectionScreen> {
                     final pickedFile = await ImagePicker()
                         .pickImage(source: ImageSource.gallery);
                     if (pickedFile != null) {
-                      // Действия с выбранной фотографией
                       setState(() {
                         firstImageFile = File(pickedFile.path);
                       });
@@ -57,11 +57,9 @@ class _SelectionScreenState extends State<SelectionScreen> {
                 ),
                 ImagePickerWidget(
                   onPressed: () async {
-                    // MainRepository().secondImageFile();
                     final pickedFile = await ImagePicker()
                         .pickImage(source: ImageSource.gallery);
                     if (pickedFile != null) {
-                      // Действия с выбранной фотографией
                       setState(() {
                         secondImageFile = File(pickedFile.path);
                       });
@@ -94,56 +92,22 @@ class _SelectionScreenState extends State<SelectionScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: ButtonWidget(
-                      onPressed: () {
-                        if (firstImageFile != null && secondImageFile != null) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => ImageComparisonScreen(
-                                firstImageFile: firstImageFile as File,
-                                secondImageFile: secondImageFile as File,
-                              ),
-                            ),
-                          );
-                        } else {
-                          snackBar();
-                        }
-                      },
-                      color: Colors.purple,
-                      child: const Text(
-                        AppStrings.firstMethod,
-                        style: AppStyles.appStyle14,
-                      ),
-                    ),
+                MethodButtonWidget(
+                  firstImageFile: firstImageFile,
+                  secondImageFile: secondImageFile,
+                  textButton: AppStrings.firstMethod,
+                  routeWidget: ImageComparisonScreen(
+                    firstImageFile: firstImageFile,
+                    secondImageFile: secondImageFile,
                   ),
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: ButtonWidget(
-                      onPressed: () {
-                        if (firstImageFile != null && secondImageFile != null) {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => DecodeImageScreen(
-                                firstImageFile: firstImageFile as File,
-                                secondImageFile: secondImageFile as File,
-                              ),
-                            ),
-                          );
-                        } else {
-                          snackBar();
-                        }
-                      },
-                      color: Colors.purple,
-                      child: const Text(
-                        AppStrings.secondMethod,
-                        style: AppStyles.appStyle14,
-                      ),
-                    ),
+                MethodButtonWidget(
+                  firstImageFile: firstImageFile,
+                  secondImageFile: secondImageFile,
+                  textButton: AppStrings.secondMethod,
+                  routeWidget: DecodeImageScreen(
+                    firstImageFile: firstImageFile,
+                    secondImageFile: secondImageFile,
                   ),
                 ),
               ],
@@ -162,7 +126,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
     );
   }
 
-  snackBar() {
+  showSnackBar() {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Center(child: Text(AppStrings.snackBarMessage)),

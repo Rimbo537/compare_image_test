@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ButtonWidget extends StatelessWidget {
-  VoidCallback onPressed;
-  Widget child;
-  Color? color;
+  final VoidCallback onPressed;
+  final Widget child;
+  final Color? color;
 
-  ButtonWidget({
+  const ButtonWidget({
     super.key,
     required this.child,
     required this.onPressed,
